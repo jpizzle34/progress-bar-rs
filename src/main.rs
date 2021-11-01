@@ -50,7 +50,7 @@ impl<Iter> Progress<Iter, Unbounded>
 where
     Iter: ExactSizeIterator,
 {
-    pub fn with_bound(mut self) -> Progress<Iter, Bounded> {
+    pub fn with_bound(self) -> Progress<Iter, Bounded> {
         let bound = Bounded {
             bound: self.iter.len(),
             delims: ('[', ']'),
